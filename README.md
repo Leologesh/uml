@@ -3,4 +3,6 @@
 hi this new git sample
 
 
-hello i changed 2nd line of this uml 
+hi this edited line check it this is second edited line
+
+hi this  2nd commit
