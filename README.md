@@ -3,4 +3,4 @@
 hi this new git sample
 
 
-hi this edited line check it this is second edited line
+hello i changed 2nd line of this uml 
