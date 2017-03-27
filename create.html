@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<title></title>
+
+	<?php include '/header.php' ?>
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#createdb').click(function(){
+var id=$('.id').val();
+var fname=$('.fname').val();
+var lname=$('.lname').val();
+var city=$('.city').val();
+	$.ajax({
+type: "POST",
+url: "create.php",
+data: 'Id='+id+'&first_name='+fname+'&last_name='+lname+'&city_name='+city,
+success: function(results) {
+	$('.result').append(results);
+},
+  error: function(XMLHttpRequest, textStatus, errorThrown) {
+     console.log("some error");
+  }
+});
+	});
+	});
+</script>
+<body>
+	<center>
+
+<div id="header">
+ <div id="content">
+    <label>CRUD Operations With PHP and MySql </label>
+    </div>
+</div>
+	<div id="body">
+	 <div id="content">
+	    <form  method="POST">
+	    <table align="center">
+	    <tr>
+	    <!-- <td align="center"><a href="index.php">back to main page</a></td> -->
+	    </tr>
+	    <tr>
+	    <td><input class="id" type="text" name="Id" placeholder="ID" required /></td>
+	    </tr>
+	    <tr>
+	    <td><input class="fname" type="text" name="first_name" placeholder="First Name" required /></td>
+	    </tr>
+	    <tr>
+	    <td><input class="lname" type="text" name="last_name" placeholder="Last Name" required /></td>
+	    </tr>
+	    <tr>
+	    <td><input class="city" type="text" name="city_name" placeholder="City" required /></td>
+	    </tr>
+	    <tr>
+	    <td><button type="button" id="createdb" name="btn-save"><strong>SAVE</strong></button></td>
+	    </tr>
+	    <tr>
+	    <td><label style="background-color:#00cc00;" class="result"></label></td>
+	    </tr>
+	    </table>
+	    </form>
+	    </div>
+	</div>
+
+</center>
+</body>
+</html>
